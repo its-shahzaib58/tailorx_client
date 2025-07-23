@@ -154,7 +154,7 @@ const Settings = () => {
             <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center">
               {user.logoUrl ? (
                 <img
-                  src={'https://tailorx-server.vercel.app'+user.logoUrl}
+                  src={SERVER_DOMAIN+user.logoUrl}
                   alt="Business Logo"
                   className="w-full h-full object-cover rounded-lg"
                 />
