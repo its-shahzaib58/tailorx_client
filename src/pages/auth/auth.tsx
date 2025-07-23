@@ -6,10 +6,7 @@ const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 export const isLoggedIn = async (): Promise<boolean> => {
   try {
     const response = await axios.get(
-      `${SERVER_DOMAIN}/auth/me`,
-      {
-        withCredentials: true, // ✅ sends session cookie to backend
-      } 
+      `${SERVER_DOMAIN}/auth/me`
     );
 
     return response.data.loggedIn;
