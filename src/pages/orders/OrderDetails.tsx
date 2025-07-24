@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import { Spin } from "antd";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 
 // Mock order data
@@ -69,7 +70,7 @@ const OrderDetails = () => {
         handleOrderGet(id)
       }
   },[id])
-  if ( order._id === "") return <Spinner />;
+  if ( order._id === "") return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
   return (
     <div className="p-4 space-y-4">
       {/* Header */}

@@ -16,6 +16,7 @@ import { ArrowLeft, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import { Spin } from "antd";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 // Mock data
 
@@ -175,7 +176,7 @@ const EditOrder = () => {
       fetchUserDetails();
     }
   }, [id]);
-  if (formData.item === "") return <Spinner />;
+  if (formData.item === "") return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
 
   return (
     <div className="p-4 space-y-4">

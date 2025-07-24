@@ -18,6 +18,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import { Spin } from "antd";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 // Mock settings data
 const userDetail = {
@@ -130,7 +131,7 @@ const Settings = () => {
 
     navigate("/login"); // ✅ redirects to login after logout
   };
-  if(user.b_name === "") return <Spinner/>;
+  if(user.b_name === "") return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
   return (
     <div className="p-4 space-y-6">
       {/* Header */}

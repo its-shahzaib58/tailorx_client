@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import { Spin } from "antd";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 // Mock data
 const mockData = {
@@ -56,7 +57,7 @@ console.log(data)
     handleGetData()
   },[]);
 
-  if(data.businessName === "") return <Spinner/>;
+  if(data.businessName === "") return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
   return (
     <div className="p-4 space-y-6">
       {/* Header */}

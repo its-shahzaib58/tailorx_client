@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Plus, Eye, Edit, Phone } from "lucide-react";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import { Spin } from "antd";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 // Mock clients data
 
@@ -38,7 +39,7 @@ const Clients = () => {
   useEffect(()=>{
     handleClientGet();
   },[]);
-  if ( clients.length <= 0) return <Spinner />;
+  if ( clients.length <= 0) return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
   return (
     <div className="p-4 space-y-4">
       {/* Header */}

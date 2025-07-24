@@ -25,6 +25,7 @@ import Spinner from "@/components/Spinner";
 const SERVER_DOMAIN = import.meta.env.VITE_SERVER_DOMAIN;
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { Spin } from "antd";
 // Mock reports data
 
 const mockReports = {
@@ -149,7 +150,7 @@ const handleExportPDF = () => {
     getReports();
   }, [startDate,endDate]);
 
-  // if(data.totalOrders !== 0 ) return <Spinner/>;
+  if(data.totalOrders == 0 ) return <div className="h-screen flex items-center justify-center bg-background p-4"><Spin size="large" /></div>;
   return (
     <div className="p-4 space-y-6">
       {/* Header */}
