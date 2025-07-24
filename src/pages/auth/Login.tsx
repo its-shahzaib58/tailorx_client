@@ -45,13 +45,14 @@ const Login = () => {
           title: "Login Failed",
           description:
             error.response?.data?.message || "Invalid email or password",
+          
         });
     }
   }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="max-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-4">
