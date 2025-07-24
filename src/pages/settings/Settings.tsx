@@ -154,7 +154,7 @@ const Settings = () => {
             <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center">
               {user.logoUrl ? (
                 <img
-                  src={SERVER_DOMAIN+user.logoUrl}
+                  src={user.logoUrl}
                   alt="Business Logo"
                   className="w-full h-full object-cover rounded-lg"
                 />
