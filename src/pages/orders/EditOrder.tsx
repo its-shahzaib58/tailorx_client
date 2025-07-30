@@ -60,16 +60,15 @@ const EditOrder = () => {
       });
     }
   };
-  const generatePreview = () => {
+  const generatePreview = async () => {
     if (!selectedTemplate) return;
 
-    const preview = selectedTemplate.template
+    const preview =  selectedTemplate.template
       .replace(/\[Customer Name\]/g, formData.customerId.name)
       .replace(/\[Item\]/g, formData.item)
       .replace(/\[Business Name\]/g, user.b_name);
 
-    // console.log(preview)
-    setPreviewText(preview);
+   return preview;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,10 +97,11 @@ const EditOrder = () => {
         description: "The order changes have been saved",
       });
       if (formData.orderStatus === "Ready") {
-        generatePreview();
-        console.log(previewText);
+      
+        const privewMsg = await generatePreview();
+        console.log(privewMsg)
         await window.open(
-          `https://wa.me/${formData.customerId.phone_no}?text=${previewText}`,
+          `https://wa.me/${formData.customerId.phone_no}?text=${privewMsg}`,
           "_blank"
         );
       }
